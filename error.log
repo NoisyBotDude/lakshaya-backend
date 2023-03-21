@@ -1,0 +1,26 @@
+ERROR: exception in get_user_profile route
+ 
+                    TIMESTAMP: 2023-03-21 08:06:26.112326
+
+                    TRACE: Traceback (most recent call last):
+  File "C:\Users\ashis\OneDrive\Desktop\Projects\lakshaya\backend\api\routes\user\user_get_routes.py", line 40, in get_youtube_transcript
+    text = get_transcript_v3(request.video_id)
+  File "C:\Users\ashis\OneDrive\Desktop\Projects\lakshaya\backend\api\utils\nlp\youtube_transcript.py", line 6, in get_transcript_v3
+    srt = YouTubeTranscriptApi.get_transcript(video_id)
+  File "C:\Users\ashis\OneDrive\Desktop\Projects\lakshaya\backend\venv\lib\site-packages\youtube_transcript_api\_api.py", line 132, in get_transcript
+    return cls.list_transcripts(video_id, proxies, cookies).find_transcript(languages).fetch()
+  File "C:\Users\ashis\OneDrive\Desktop\Projects\lakshaya\backend\venv\lib\site-packages\youtube_transcript_api\_api.py", line 71, in list_transcripts
+    return TranscriptListFetcher(http_client).fetch(video_id)
+  File "C:\Users\ashis\OneDrive\Desktop\Projects\lakshaya\backend\venv\lib\site-packages\youtube_transcript_api\_transcripts.py", line 47, in fetch
+    self._extract_captions_json(self._fetch_video_html(video_id), video_id)
+  File "C:\Users\ashis\OneDrive\Desktop\Projects\lakshaya\backend\venv\lib\site-packages\youtube_transcript_api\_transcripts.py", line 59, in _extract_captions_json
+    raise TranscriptsDisabled(video_id)
+youtube_transcript_api._errors.TranscriptsDisabled: 
+Could not retrieve a transcript for the video https://www.youtube.com/watch?v=vLqTf2b6GZw! This is most likely caused by:
+
+Subtitles are disabled for this video
+
+If you are sure that the described cause is not responsible for this error and that a transcript should be retrievable, please create an issue at https://github.com/jdepoix/youtube-transcript-api/issues. Please add which version of youtube_transcript_api you are using and provide the information needed to replicate the error. Also make sure that there are no open issues which already describe your problem!
+
+
+                
